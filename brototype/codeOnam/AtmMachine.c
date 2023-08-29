@@ -1,6 +1,6 @@
 #include<stdio.h>
 void depositfn(int);
-void withdraw(int);
+void withdrawfn(int);
 int accBalance=0, minstmnt[],i=0;
 int main(){
     int repeat=1;
@@ -17,7 +17,9 @@ int main(){
             depositfn(deposit);
             break;
         case 2: 
-            // withdraw();
+            printf("Enter amount to withdraw: ");
+            scanf("%d",&withdraw);   
+            withdrawfn(withdraw);
         default:
             break;
         }
@@ -31,9 +33,19 @@ void depositfn(int deposit){
     accBalance+=deposit;
     minstmnt[i]=deposit;
     i++;
-    printf("\ndeposited amount %d \n Account Balance: %d\n",deposit,accBalance);
+    printf("\ndeposited amount: %d \n Account Balance: %d\n",deposit,accBalance);
    
 }
-// void withdraw(){
-
-// }
+void withdrawfn(int withdraw){
+    if (accBalance!=0)
+    {
+        accBalance-=withdraw;
+        printf("\namount withdrawn: %d \n Account Balance: %d\n",withdraw,accBalance);
+        minstmnt[i]=(withdraw*(-1));
+        i++;
+    }
+    else
+    {
+        printf("Error. Insufficient Balance!\n");
+    }
+}
