@@ -2,7 +2,7 @@
 
 int main(){
     int arr[20],sum=0,i,n;
-    
+   
 //input array size
     printf("array size: ");
     scanf("%d",&n);
@@ -18,7 +18,7 @@ int main(){
         printf("\n%d",arr[i]);
      }
      
- //calculate sum
+//calculate sum
     for(i=0;i<n;i++)
         sum+=arr[i];
     
